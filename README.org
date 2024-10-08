@@ -4,6 +4,8 @@
 $ forge --help
 $ anvil --help
 $ cast --help
+
+abi.encodeWithSelector(0xfe575a87, addr))
 ```
 #+begin_src shell :results output
 echo "hello"
