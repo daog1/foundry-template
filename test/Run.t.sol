@@ -6,10 +6,29 @@ import {Run} from "../src/Run.sol";
 
 contract RunTest is Test {
     Run public run;
+    modifier blLog(string memory name) {
+        uint256 bloold;
+        bloold = address(this).balance;
+        console2.log("bl %s Before: %e", name, address(this).balance);
+        _;
+        if (address(this).balance >= bloold) {
+            console2.log(
+                "bl %s After: %e",
+                name,
+                address(this).balance - bloold
+            );
+        } else {
+            console2.log(
+                "bl %s After: -%e",
+                name,
+                bloold - address(this).balance
+            );
+        }
+    }
 
     function setUp() public {
         run = new Run();
     }
 
-    function test_exp1() public {}
+    function test_exp1() public blLog("") {}
 }
