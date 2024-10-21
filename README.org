@@ -5,6 +5,8 @@ $ forge --help
 $ anvil --help
 $ cast --help
 
+
+cast --format-bytes32-string "data:"
 abi.encodeWithSelector(0xfe575a87, addr))
 ```
 #+begin_src shell :results output
