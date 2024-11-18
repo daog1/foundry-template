@@ -2,10 +2,8 @@
 pragma solidity ^0.8.13;
 
 import {Test, console2} from "forge-std/Test.sol";
-import {Run} from "../src/Run.sol";
 
 contract RunTest is Test {
-    Run public run;
     modifier blLog(string memory name) {
         uint256 bloold;
         bloold = address(this).balance;
@@ -27,7 +25,7 @@ contract RunTest is Test {
     }
 
     function setUp() public {
-        run = new Run();
+        //run = new Run();
     }
 
     function test_exp1() public blLog("") {}
